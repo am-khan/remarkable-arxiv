@@ -9,14 +9,29 @@ You need to have a couple of things locally, namely
 ghostscript (sudo apt-get install ghostscript)
 rmapi (go get -u github.com/juruen/rmapi)
 ```
-
 Once you have those, you need to connect `rmapi`, do that by running it+following the instructions.
+
+Remember to set your PATH to include the binary files for rmapi.
+
+```
+export PATH=$PATH:$GOPATH/bin
+```
+
+You'll need node to create the bookmarklet, for easy installation lets use nvm:
+
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+nvm install 11.0
+nvm use 11.0
+```
 
 The python dependencies are managed with `pipenv` so running `pipenv install` sets you up.
 
-The bookmarklet itself is built with `gulp`, so you can do 
+The bookmarklet itself is built with `gulp`, so you can do
 ```
-cd js && npm install && npm run gulp
+cd js && npm install -g && gulp
 ```
 To build the `dist` folder with the bookmarklet.
 
@@ -31,7 +46,7 @@ If you want to make sure the service is always running, then start it on startup
 ```
 However note that fiddling with an @reboot crontab is a *classic* way to boot-cycle / brick your laptop, so proceed with caution.
 
-The libraries that do all the hard work are `rmapi` and `pdfCropMargins`, which more or less rock. 
+The libraries that do all the hard work are `rmapi` and `pdfCropMargins`, which more or less rock.
 
 security - hideously insecure I imagine. Apart from anything else, there's a shell injection from arxiv titles that would be hilarious to execute.
 
