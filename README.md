@@ -8,6 +8,7 @@ You need to have a couple of things locally, namely
 ```
 ghostscript (sudo apt-get install ghostscript)
 rmapi (go get -u github.com/juruen/rmapi)
+pipenv (pip3 install pipenv)
 ```
 Once you have those, you need to connect `rmapi`, do that by running it+following the instructions.
 
@@ -35,7 +36,7 @@ cd js && npm install -g && gulp
 ```
 To build the `dist` folder with the bookmarklet.
 
-After that's done, you can do `pipenv run service.py` and navigate to `{wherever this is}/js/dist/test-page.html` from where you can copy the bookmarklet into your browser's toolbar.
+After that's done, you can do `pipenv run python service.py` and navigate to `{wherever this is}/js/dist/test-page.html` from where you can copy the bookmarklet into your browser's toolbar.
 
 "That's it" (lol this is a pain for functionality that should be out-of-the-box)
 
