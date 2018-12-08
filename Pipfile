@@ -11,7 +11,7 @@ sanic = "*"
 aiohttp = "*"
 "beautifulsoup4" = "*"
 sanic-cors = "*"
-pdfCropMargins = "*"
+"pdfCropMargins" = "*"
 
 
 [requires]
